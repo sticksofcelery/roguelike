@@ -1,6 +1,7 @@
 export class UIManager {
     constructor() {
         this.healthBar = document.getElementById('playerHealth');
+        this.score = document.getElementById('score');
     }
 
     updateHealthBar(entities) {
@@ -13,5 +14,10 @@ export class UIManager {
                 healthPercent > 60 ? '#4CAF50' :
                 healthPercent > 30 ? '#FFA500' : '#FF0000';
         }
+    }
+
+    updateScore(score) {
+        this.score.innerText = score.toString();
+
     }
 }

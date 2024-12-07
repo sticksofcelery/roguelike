@@ -56,6 +56,7 @@ export class Game {
         this.messageManager.updateMessages(this.gameState.messages);
         this.uiManager.updateHealthBar(this.gameState.entities);
         this.renderManager.render(this.gameState);
+        this.uiManager.updateScore(this.gameState.score);
 
         // Play combat sound if there was combat this turn
         if (this.gameState.combat_this_turn) {

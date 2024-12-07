@@ -81,11 +81,27 @@
         .control-btn:hover {
             background-color: #45a049;
         }
+
+        .health-score-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .score {
+            min-width: 100px;
+        }
     </style>
 </head>
 <body>
-    <div class="health-bar">
-        <div id="playerHealth" class="health-bar-fill" style="width: 100%"></div>
+    <div class="health-score-wrapper">
+        <div class="health-bar">
+            <div id="playerHealth" class="health-bar-fill" style="width: 100%"></div>
+        </div>
+
+        <div class="score">
+            Score: <span id="score"></span>
+        </div>
     </div>
 
     <div id="audioControls">

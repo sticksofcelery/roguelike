@@ -35,6 +35,7 @@ class GameState:
         self.game_over = False
         self.combat_this_turn = False
         self.initialize_level()
+        self.score = 0
 
     def initialize_level(self) -> None:
         """Initialize or reset the current level."""
@@ -220,6 +221,7 @@ class GameState:
                 if enemy_at_target.health <= 0:
                     self.messages.append("Enemy defeated!")
                     enemy_at_target.behavior = 'dead'
+                    self.score += 30
 
             # Handle movement if no enemy
             elif self.is_valid_move(new_x, new_y):
@@ -277,6 +279,7 @@ class GameState:
             'walls': self.walls,
             'game_over': self.game_over,
             'combat_this_turn': self.combat_this_turn,
+            'score': self.score,
             'entities': {
                 str(entity_id): {
                     'x': entity.x,
